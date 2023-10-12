@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GSLC1_WebDes/static/css/main.9a3570a0.css",
+    "main.js": "/GSLC1_WebDes/static/js/main.fbdebd9c.js",
+    "static/js/787.ab48916f.chunk.js": "/GSLC1_WebDes/static/js/787.ab48916f.chunk.js",
+    "index.html": "/GSLC1_WebDes/index.html",
+    "main.9a3570a0.css.map": "/GSLC1_WebDes/static/css/main.9a3570a0.css.map",
+    "main.fbdebd9c.js.map": "/GSLC1_WebDes/static/js/main.fbdebd9c.js.map",
+    "787.ab48916f.chunk.js.map": "/GSLC1_WebDes/static/js/787.ab48916f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a3570a0.css",
+    "static/js/main.fbdebd9c.js"
+  ]
+}
