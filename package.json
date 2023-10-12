@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Nucizz.github.io/GSLC1_WebDes",
   "name": "2540115225_calvinanaciasuciawan_gslc1",
   "version": "0.1.0",
   "private": true,
@@ -19,7 +20,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://Nucizz.github.io/GSLC1_WebDes",
   "eslintConfig": {
     "extends": [
       "react-app",
