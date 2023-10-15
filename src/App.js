@@ -70,8 +70,10 @@ export default function App() {
   }
 
   return (
-    <div className="bg-animation w-screen h-screen flex justify-center items-center">
-      <form className="xl:w-1/4 lg:w-1/3 md:w-2/5 w-full mx-5 bg-white rounded-lg p-6 flex flex-col gap-3">
+    <div className="bg-animation w-screen h-screen flex justify-center items-center z-10">
+      <DisclaimerPopUp />
+
+      <form className="xl:w-1/4 lg:w-1/3 md:w-2/5 w-full mx-5 bg-white rounded-lg p-6 flex flex-col gap-3 z-40">
 
         <div className="w-full flex flex-col">
           <span className="md:text-lg text-lg font-bold">Get Money Easily</span>
@@ -96,30 +98,30 @@ export default function App() {
           </div>
         </div>
 
-        <div className="mt-3">
-          <div className="flex flex-col gap-1">
-            
-            <span className="font-medium text-base sm:text-sm">Select redeem amount</span>
 
-            <div className="flex flex-row items-center md:text-base text-sm">
-              <input className="md:w-4 md:h-4 h-3 w-3 mr-2 hover:cursor-pointer" type="radio" checked={amount === 1} onChange={() => setAmount(1)} />
-              $100
-            </div>
+        <div className="flex flex-col gap-1 mt-3">
+          
+          <span className="font-medium text-base sm:text-sm">Select redeem amount</span>
 
-            <div className="flex flex-row items-center md:text-base text-sm">
-              <input className="md:w-4 md:h-4 h-3 w-3 mr-2 hover:cursor-pointer" type="radio" checked={amount === 2} onChange={() => setAmount(2)} />
-              $250
-            </div>
-
-            <div className="flex flex-row items-center md:text-base text-sm">
-              <input className="md:w-4 md:h-4 h-3 w-3 mr-2 hover:cursor-pointer" type="radio" checked={amount === 3} onChange={() => setAmount(3)} />
-              $500
-            </div>
-
+          <div className="flex flex-row items-center md:text-base text-sm">
+            <input className="md:w-4 md:h-4 h-3 w-3 mr-2 hover:cursor-pointer" type="radio" checked={amount === 1} onChange={() => setAmount(1)} />
+            $100
           </div>
+
+          <div className="flex flex-row items-center md:text-base text-sm">
+            <input className="md:w-4 md:h-4 h-3 w-3 mr-2 hover:cursor-pointer" type="radio" checked={amount === 2} onChange={() => setAmount(2)} />
+            $250
+          </div>
+
+          <div className="flex flex-row items-center md:text-base text-sm">
+            <input className="md:w-4 md:h-4 h-3 w-3 mr-2 hover:cursor-pointer" type="radio" checked={amount === 3} onChange={() => setAmount(3)} />
+            $500
+          </div>
+
         </div>
 
-        <input className="text-white bg-blue-500 rounded-md md:h-10 h-9 w-full text-white font-semibold hover:cursor-pointer hover:bg-blue-700 transition duration-300 mt-3" type="button" value="Submit" onClick={submit} />
+
+        <button className="md:text-base text-sm text-white bg-blue-500 rounded-md md:h-10 h-9 w-full text-white font-semibold hover:cursor-pointer hover:bg-blue-700 transition duration-300 mt-3" type="button" onClick={submit}>Submit</button>
 
       </form>
         
@@ -131,6 +133,30 @@ function TextField({placeholder, type, value, onChange}) {
   return (
     <input className="bg-gray-200 rounded-md w-full md:h-10 h-9 md:text-base text-sm focus:outline-none px-3" placeholder={placeholder} type={type} value={value} onChange={onChange} />
   );
+}
+
+function DisclaimerPopUp() {
+  var [visibility, setVisibility] = useState(true)
+
+  return visibility ? (
+    <div className="absolute w-screen h-screen z-50 bg-gray-800/75 flex justify-center items-center">
+        <div className="rounded-lg xl:w-1/4 lg:w-1/3 md:w-2/5 w-full mx-5 bg-white rounded-lg p-6 flex flex-col">
+          
+          <span className="md:text-lg text-lg font-bold mb-3">DISCLAIMER!</span>
+
+          <p className="md:text-sm text-xs text-gray-400 mb-3">This was made for assignment and fun.
+          Do not ever enter your real data even though we do not collect it.
+          Any malware or unknown services could be running in the background of your system or browser
+          collecting your data. So be responsible of your own data,
+          damage or lost of your data is not my fault.</p>
+
+          <a className="md:text-base text-sm text-white bg-yellow-500 rounded-md md:h-10 h-9 w-full text-white font-semibold hover:cursor-pointer hover:bg-yellow-700 transition duration-300 mt-3 flex justify-center items-center text-center" href="https://github.com/Nucizz/GSLC1_WebDes">Source Code</a>
+
+          <button className="md:text-base text-sm text-white bg-blue-500 rounded-md md:h-10 h-9 w-full text-white font-semibold hover:cursor-pointer hover:bg-blue-700 transition duration-300 mt-3" onClick={() => {setVisibility(false)}}>I Understand</button>
+
+        </div>
+    </div>
+  ) : null;
 }
 
 function AmountConvert(amount) {
